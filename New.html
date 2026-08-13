@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Pro | Study Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logoIcon">J</div>
+            <div>
+                <b>JEE PRO</b>
+                <small>WITH VIVEK</small>
+            </div>
+        </div>
+
+        <nav>
+            <button class="nav active" onclick="openPage('dashboard',this)">⌂ <span>Dashboard</span></button>
+            <button class="nav" onclick="openPage('study',this)">📚 <span>Study</span></button>
+            <button class="nav" onclick="openPage('targets',this)">🎯 <span>Targets</span></button>
+            <button class="nav" onclick="openPage('timer',this)">⏱ <span>Focus Timer</span></button>
+            <button class="nav" onclick="openPage('notes',this)">📝 <span>Notes</span></button>
+            <button class="nav" onclick="openPage('ai',this)">✦ <span>AI Doubt Solver</span></button>
+        </nav>
+
+        <div class="sideBottom">
+            <button class="nav" onclick="toggleTheme()">◐ <span>Dark Mode</span></button>
+        </div>
+    </aside>
+
+
+    <main class="main">
+
+        <header class="topbar">
+            <button class="mobileMenu" onclick="toggleSidebar()">☰</button>
+
+            <div>
+                <p class="hello">Have a Good Day 👋</p>
+                <h1>Keep pushing, Vivek.</h1>
+            </div>
+
+            <div class="date" id="today"></div>
+        </header>
+
+
+        <!-- DASHBOARD -->
+
+        <section id="dashboard" class="page active">
+
+            <div class="heroCard">
+                <div>
+                    <span class="tag">JEE 2027,2028</span>
+                    <h2>One chapter at a time.<br>One step closer to IIT.</h2>
+                    <p>Consistency beats motivation.</p>
+                    <button onclick="openPage('targets')">View Today's Targets →</button>
+                </div>
+
+                <div class="heroCircle">
+                    <strong id="progressCircle">0%</strong>
+                    <span>Progress</span>
+                </div>
+            </div>
+
+
+            <div class="stats">
+
+                <div class="stat">
+                    <span>📚</span>
+                    <div>
+                        <small>Study Hours</small>
+                        <strong id="hours">0h</strong>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <span>🎯</span>
+                    <div>
+                        <small>Completed</small>
+                        <strong id="completedCount">0</strong>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <span>🔥</span>
+                    <div>
+                        <small>Day Streak</small>
+                        <strong>1 Day</strong>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <span>🏆</span>
+                    <div>
+                        <small>Goal</small>
+                        <strong>IIT Bombay</strong>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="sectionTitle">
+                <div>
+                    <h2>Continue Learning</h2>
+                    <p>Pick up where you left off.</p>
+                </div>
+            </div>
+
+            <div class="subjectGrid">
+
+                <div class="subject physics">
+                    <span>PHYSICS</span>
+                    <h3>Mechanics</h3>
+                    <p>Motion • NLM • WEP</p>
+                    <div class="bar"><i style="width:55%"></i></div>
+                    <small>55% complete</small>
+                </div>
+
+                <div class="subject chemistry">
+                    <span>CHEMISTRY</span>
+                    <h3>Mole Concept</h3>
+                    <p>Physical Chemistry</p>
+                    <div class="bar"><i style="width:35%"></i></div>
+                    <small>35% complete</small>
+                </div>
+
+                <div class="subject maths">
+                    <span>MATHEMATICS</span>
+                    <h3>Trigonometry</h3>
+                    <p>Functions • Identities</p>
+                    <div class="bar"><i style="width:70%"></i></div>
+                    <small>70% complete</small>
+                </div>
+
+            </div>
+
+
+            <div class="bottomGrid">
+
+                <div class="panel">
+                    <div class="panelHead">
+                        <div>
+                            <h2>Today's Targets</h2>
+                            <p>Your focus for today</p>
+                        </div>
+                        <button onclick="openPage('targets')">See all</button>
+                    </div>
+
+                    <div id="dashboardTargets"></div>
+                </div>
+
+
+                <div class="quote">
+                    <div class="quoteIcon">✦</div>
+                    <h2>“The secret of getting ahead is getting started.”</h2>
+                    <p>Start now. Future you will thank you.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STUDY -->
+
+        <section id="study" class="page">
+
+            <div class="pageTitle">
+                <span class="tag">LEARNING</span>
+                <h1>Study Room</h1>
+                <p>Choose a subject and start learning.</p>
+            </div>
+
+            <div class="largeSubjects">
+
+                <div class="largeSubject">
+                    <div class="subjectIcon">⚡</div>
+                    <div>
+                        <small>PHYSICS</small>
+                        <h2>Physics</h2>
+                        <p>Mechanics, Waves, Electricity & more</p>
+                    
+                    </div>
+                    <button>Open →</button>
+                </div>
+
+                <div class="largeSubject">
+                    <div class="subjectIcon">🧪</div>
+                    <div>
+                        <small>CHEMISTRY</small>
+                        <h2>Chemistry</h2>
+                        <p>Physical, Organic & Inorganic</p>
+                    </div>
+                    <button>Open →</button>
+                </div>
+
+                <div class="largeSubject">
+                    <div class="subjectIcon">📐</div>
+                    <div>
+                        <small>MATHEMATICS</small>
+                        <h2>Mathematics</h2>
+                        <p>Algebra, Calculus, Geometry & more</p>
+                    </div>
+                    <button>Open →</button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TARGETS -->
+
+        <section id="targets" class="page">
+
+            <div class="pageTitle">
+                <span class="tag">PRODUCTIVITY</span>
+                <h1>Target Planner</h1>
+                <p>Plan your work. Complete your goals.</p>
+            </div>
+
+            <div class="addTarget">
+                <input id="targetInput" placeholder="What will you complete today?">
+                <button onclick="addTarget()">+ Add Target</button>
+            </div>
+
+            <div id="targetList"></div>
+
+        </section>
+
+
+        <!-- TIMER -->
+
+        <section id="timer" class="page">
+
+    <div class="pageTitle">
+        <span class="tag">FOCUS</span>
+        <h1>Focus Timer</h1>
+        <p>Apne study session ka time khud set karo.</p>
+    </div>
+
+    <div class="timerCard">
+
+        <div class="timerRing">
+            <strong id="timerDisplay">25:00</strong>
+            <span id="timerStatus">READY</span>
+        </div>
+
+        <div class="timerEdit">
+
+            <label>Set Study Time</label>
+
+            <div class="timeInputs">
+
+                <input
+                    type="number"
+                    id="customMinutes"
+                    min="1"
+                    max="180"
+                    value="25"
+                    placeholder="Minutes"
+                >
+
+                <span>MIN</span>
+
+            </div>
+
+            <button onclick="setCustomTime()">
+                ✓ Set Time
+            </button>
+
+        </div>
+
+        <div class="timerButtons">
+
+            <button onclick="startTimer()">
+                ▶ Start
+            </button>
+
+            <button onclick="pauseTimer()">
+                Ⅱ Pause
+            </button>
+
+            <button class="reset" onclick="resetTimer()">
+                ↻ Reset
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- NOTES -->
+
+        <section id="notes" class="page">
+
+            <div class="pageTitle">
+                <span class="tag">PERSONAL</span>
+                <h1>My Notes</h1>
+                <p>Keep your important ideas here.</p>
+            </div>
+
+            <div class="notesCard">
+                <textarea id="notesBox" placeholder="Write your formulas, ideas or revision notes..."></textarea>
+                <div>
+                    <button onclick="saveNotes()">Save Notes</button>
+                    <button class="reset" onclick="clearNotes()">Clear</button>
+                </div>
+                <small id="noteStatus"></small>
+            </div>
+
+        </section>
+
+
+        <!-- AI -->
+
+        <section id="ai" class="page">
+
+            <div class="pageTitle">
+                <span class="tag">INTELLIGENCE</span>
+                <h1>AI Doubt Solver</h1>
+                <p>Ask your JEE doubt and get help.</p>
+            </div>
+
+            <div class="aiCard">
+
+                <div id="chatBox">
+                    <div class="message bot">
+                        <b>✦ JEE AI</b>
+                        <p>Hello! Apna JEE doubt pucho.</p>
+                    </div>
+                </div>
+
+                <div class="chatInput">
+                    <input id="question" placeholder="Ask your Physics, Chemistry or Maths doubt...">
+                    <button onclick="askAI()">Send ↑</button>
+                </div>
+
+                <small>AI connection can be added later using an API/backend.</small>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
