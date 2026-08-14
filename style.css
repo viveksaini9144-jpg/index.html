@@ -60,7 +60,7 @@ button {
     display: grid;
     place-items: center;
     background: linear-gradient(135deg,#220fc5,#ad560f);
-    font-size: 20px;
+    font-size: 12px;
     font-weight: bold;
 }
 
